@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <h1>Владельцы</h1>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <td>Ф.И.О</td>
+            <td>Адрес</td>
+            <td>Номер паспорта</td>
+            <td>Мобильный телефон</td>
+            <td></td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="owner : ${owners}">
+            <td th:text="${owner.fullName}"/>
+            <td th:text="${owner.address}"/>
+            <td th:text="${owner.passportNumber}"/>
+            <td th:text="${owner.telephoneNumber}"/>
+            <td><a class="btn btn-info" th:href="@{'/owner/info/' + ${owner.id}}">Инфо</a></td>
+            <td><a class="btn btn-danger" th:href="@{'/owner/delete/' + ${owner.id}}">Удалить</a></td>
+            <td><a class="btn btn-secondary" th:href="@{'/owner/edit/' + ${owner.id}}">Редактировать</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-success" th:href="@{/owner/add}">Добавить</a>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <h1>Владелец</h1>
+    <p th:text="${owner.fullName}"></p>
+    <p th:text="${owner.passportNumber}"></p>
+    <p th:text="${owner.address}"></p>
+    <p th:text="${owner.telephoneNumber}"></p>
+    <p th:text="${owner.car.model}"></p>
+    <p th:text="${owner.car.carNumber}"></p>
+    <p th:text="${owner.car.yearOfIssue}"></p>
+    <p th:text="${owner.car.manufacturer}"></p>
+
+    <table>
+        <tr>
+            <td>Ф.И.О:</td>
+            <td><p th:text="${owner.fullName}"></p></td>
+        </tr>
+        <tr>
+            <td>Номер телефона:</td>
+            <td><p th:text="${owner.telephoneNumber}"></p></td>
+        </tr>
+        <tr>
+            <td>Адрес </td>
+            <td> <input type="text" th:field="*{status}"/></td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>

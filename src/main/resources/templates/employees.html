@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div th:replace="~{navigation :: navigation(Employees)}"/>
+    <h1>Мастера</h1>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <td>Ф.И.О</td>
+            <td>Специализация</td>
+            <td></td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${employees}">
+            <td th:text="${employee.fullName}"/>
+            <td th:text="${employee.position}"/>
+            <td><a class="btn btn-info" th:href="@{'/details/' + ${employee.id}}">Инфо</a></td>
+            <td><a class="btn btn-danger" th:href="@{'/delete/' + ${employee.id}}">Удалить</a></td>
+            <td><a class="btn btn-secondary" th:href="@{'/employee/edit/' + ${employee.id}}">Редактировать</a></td>
+            <td><a class="btn btn-success" th:href="@{'/employee/schedule/add/' + ${employee.id}}">Запись</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" th:href="@{/employee/add}">Добавить</a>
+
+</div>
+</body>
+</html>
