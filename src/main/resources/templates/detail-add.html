@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <h1>Форма заполнения автомобиля</h1>
+    <div th:replace="~{navigation :: navigation(detail-add)}"/>
+    <form action="#" th:action="@{/detail/add}" th:object="${detail}" method="post">
+        <table>
+            <tr>
+                <td>Название</td>
+                <td><input type ="text" th:field="*{name}"/></td>
+            </tr>
+            <tr>
+                <td>Страна производитель</td>
+                <td><input type="text" th:field="*{manufacturerCountry}"/></td>
+            </tr>
+            <tr>
+                <td>Цена</td>
+                <td> <input type="text" th:field="*{price}"/></td>
+            </tr>
+            <tr>
+                <td>Статус</td>
+                <td> <input type="text" th:field="*{status}"/></td>
+            </tr>
+        </table>
+        <p><input type="submit"  value="Submit"/></p>
+    </form>
+
+</div>
+</body>
+</html>

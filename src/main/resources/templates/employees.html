@@ -12,24 +12,26 @@
 <body>
 <div class="container">
     <div th:replace="~{navigation :: navigation(Employees)}"/>
-    <h1>Мастера</h1>
+    <h1>Сотрудники</h1>
     <table class="table table-hover">
         <thead>
         <tr>
+            <td></td>
             <td>Ф.И.О</td>
             <td>Специализация</td>
+            <td></td>
             <td></td>
             <td></td>
         </tr>
         </thead>
         <tbody>
         <tr th:each="employee : ${employees}">
+            <td><img src="https://sun9-44.userapi.com/impf/c853516/v853516282/cf3a8/NGDigdoJDOA.jpg?size=720x1080&quality=96&sign=bee50901b74a4e195e6926327e18e50c&type=album" height="100" width="100"></td>
             <td th:text="${employee.fullName}"/>
             <td th:text="${employee.position}"/>
-            <td><a class="btn btn-info" th:href="@{'/details/' + ${employee.id}}">Инфо</a></td>
-            <td><a class="btn btn-danger" th:href="@{'/delete/' + ${employee.id}}">Удалить</a></td>
+            <td><a class="btn btn-info" th:href="@{'/employee/details/' + ${employee.id}}">Инфо</a></td>
+            <td><a class="btn btn-danger" th:href="@{'/employee/delete/' + ${employee.id}}">Удалить</a></td>
             <td><a class="btn btn-secondary" th:href="@{'/employee/edit/' + ${employee.id}}">Редактировать</a></td>
-            <td><a class="btn btn-success" th:href="@{'/employee/schedule/add/' + ${employee.id}}">Запись</a></td>
         </tr>
         </tbody>
     </table>

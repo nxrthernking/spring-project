@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>Машины</h1>
+    <div th:replace="~{navigation :: navigation(Cars)}"/>
     <table class="table table-hover">
         <thead>
         <tr>
@@ -37,9 +37,6 @@
         </tr>
         </tbody>
     </table>
-
-    <a class="btn btn-success" th:href="@{/car/add}">Добавить</a>
-
 </div>
 </body>
 </html>

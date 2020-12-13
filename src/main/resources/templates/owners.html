@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>Владельцы</h1>
+    <div th:replace="~{navigation :: navigation(Owners)}"/>
     <table class="table table-hover">
         <thead>
         <tr>
@@ -32,6 +32,7 @@
             <td><a class="btn btn-info" th:href="@{'/owner/info/' + ${owner.id}}">Инфо</a></td>
             <td><a class="btn btn-danger" th:href="@{'/owner/delete/' + ${owner.id}}">Удалить</a></td>
             <td><a class="btn btn-secondary" th:href="@{'/owner/edit/' + ${owner.id}}">Редактировать</a></td>
+            <td><a class="btn btn-secondary" th:href="@{'/car/add/' + ${owner.id}}">Указать авто</a></td>
         </tr>
         </tbody>
     </table>

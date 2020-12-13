@@ -20,4 +20,16 @@ public class CarService {
     public List<Car> getAllCars(){
         return carRepository.findAll();
     }
+
+    public Car getCarById(Long id){
+        return carRepository.getOne(id);
+    }
+
+    public void deleteCarById(Long id){
+        carRepository.deleteById(id);
+    }
+
+    public void addCar(Car car){
+        carRepository.save(car);
+    }
 }
