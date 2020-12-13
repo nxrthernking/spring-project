@@ -23,4 +23,12 @@ public class OwnerService {
     public Owner getOwnerById(Long id){
         return ownerRepository.getOne(id);
     }
+
+    public void deleteOwnerById(Long id){
+        ownerRepository.deleteById(id);
+    }
+
+    public void addOwner(Owner owner){
+        ownerRepository.save(owner);
+    }
 }

@@ -11,15 +11,13 @@
 </head>
 <body>
 <div class="container">
-    <div th:replace="~{navigation :: navigation(Owner-Details)}"/>
-    <h1 th:text="${owner.fullName}"></h1>
-    <p th:text="${owner.passportNumber}"></p>
-    <p th:text="${owner.address}"></p>
-    <p th:text="${owner.telephoneNumber}"></p>
-    <p th:text="${owner.car.model}"></p>
-    <p th:text="${owner.car.carNumber}"></p>
-    <p th:text="${owner.car.yearOfIssue}"></p>
-    <p th:text="${owner.car.manufacturer}"></p>
+    <div th:replace="~{navigation :: navigation(Car-Details)}"/>
+    <p th:text="${car.model}"></p>
+    <p th:text="${car.carNumber}"></p>
+    <p th:text="${car.yearOfIssue}"></p>
+    <p th:text="${car.manufacturer}"></p>
+    <p th:text="${car.owner.fullName}"></p>
+    <p th:text="${car.owner.telephoneNumber}"></p>
 
     <!--
     <table>
